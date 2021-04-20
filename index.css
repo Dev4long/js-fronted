@@ -1,9 +1,11 @@
-body {
-    background-color: powderblue;
-  }
-  h1 {
-    color: blue;
-  }
-  p {
-    color: red;
-  }
+form {
+  background-color: #8b1dac;
+  text-align: center;
+}
+h1 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+p {
+  color: rgb(0, 0, 0);
+}
