@@ -45,7 +45,10 @@ function renderCar(car) {
     deleteBtn.innerHTML = "DELETE"
     deleteBtn.classList.add("delete")
 
-    
+    // let likeBtn = document.createElement("button")
+    // deleteBtn.innerText = "LIKE"
+    // deleteBtn.classList.add("like")
+
     // CONSTRUCT THE CARD
     carLi.append(carMake, carMod, carHp, carYear, carImg, deleteBtn)
     // APPEND TO THE DOM

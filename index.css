@@ -34,6 +34,8 @@ body {
   background-image: url("https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/Car-Headlights-LEDvsHIDvsxenon-1001x565p.jpg");
   background-color: #cccccc;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: auto;
  }
 
 /*      */
