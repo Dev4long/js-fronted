@@ -43,9 +43,8 @@ function renderCar(car) {
 
     let deleteBtn = document.createElement("button")
     deleteBtn.innerHTML = "DELETE"
-    deleteBtn.classList.add("delete")
+    deleteBtn.className = ("delete")
 
-    
     // CONSTRUCT THE CARD
     carLi.append(carMake, carMod, carHp, carYear, carImg, deleteBtn)
     // APPEND TO THE DOM
@@ -55,11 +54,11 @@ function renderCar(car) {
 
 
     deleteBtn.addEventListener("click", (evt) => {
-        fetch(`http://localhost:3000/cars`, {
+        fetch(`http://localhost:3000/cars/${car.id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
-            .then((emptyObj) => {
+            .then((carObj) => {
                 carLi.remove()
             })
 
