@@ -42,18 +42,46 @@ function renderCar(car) {
     carYear.className = "year"
 
     let deleteBtn = document.createElement("button")
-    deleteBtn.innerHTML = "DELETE"
-    deleteBtn.className = "delete"
+    deleteBtn.innerText = "DELETE"
+
+    let likeBtn = document.createElement("button")
+    likeBtn.setAttribute('type', 'button');
+    likeBtn.innerText = "❤️"
+    likeBtn.className = "like-button"
+
+    let likes = document.createElement("span")
+    likes.innerText = car.likes
 
     // CONSTRUCT THE CARD
-    carLi.append(carMake, carMod, carHp, carYear, carImg, deleteBtn)
+    carLi.append(likeBtn, likes, carMake, carMod, carHp, carYear, carImg, deleteBtn)
     // APPEND TO THE DOM
     carOl.append(carLi)
 
     container.append(carOl)
 
 
+    likeBtn.addEventListener("click", (e) => {
+        console.log('clicked');
+        fetch(`http://localhost:3000/cars/${car.id}`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                likes: car.likes + 1
+            })
+        })
+            .then(res => res.json())
+            .then((carObj) => {
+                // Take the current amount of liks on the PAGE  and update that as well 
+                likes.innerText = car.likes + 1;
+                car.likes += 1;
+            })
+    })
+
+
     deleteBtn.addEventListener("click", (evt) => {
+        console.log("im working")
         fetch(`http://localhost:3000/cars/${car.id}`, {
             method: "DELETE"
         })
@@ -61,7 +89,6 @@ function renderCar(car) {
             .then((carObj) => {
                 carLi.remove()
             })
-
     })
 }
 
@@ -98,7 +125,7 @@ newCar.addEventListener('submit', (e) => {
             renderCar(newCar)
             newCar = car
         })
-        
+
 })
 
 
@@ -113,20 +140,21 @@ let isToggleOn = false;
 typeFilter.addEventListener('click', (e) => {
     let cars = document.querySelectorAll(".car")
     // Show only sports cars 
-    if (isToggleOn === false){
+    if (isToggleOn === false) {
         cars.forEach(car => {
-            if (!car.classList.contains("sport")){
+            if (!car.classList.contains("sport")) {
                 car.style.display = 'none'
-            } 
+            }
         })
     }
     // Show all cars 
     else {
-        
+
         cars.forEach(car => {
             car.style.display = 'block';
         })
-    } 
-    isToggleOn = !isToggleOn; 
-    
+    }
+    isToggleOn = !isToggleOn;
+
 })
+
