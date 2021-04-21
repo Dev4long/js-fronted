@@ -42,15 +42,34 @@ function renderCar(car) {
     carYear.className = "year"
 
     let deleteBtn = document.createElement("button")
-    deleteBtn.innerHTML = "DELETE"
-    deleteBtn.className = ("delete")
+    deleteBtn.innerText = "DELETE"
+
+    let likeBtn = document.createElement("button")
+    likeBtn.innerText = "❤️"
+    likeBtn.className = "like-button"
+
 
     // CONSTRUCT THE CARD
-    carLi.append(carMake, carMod, carHp, carYear, carImg, deleteBtn)
+    carLi.append(likeBtn, carMake, carMod, carHp, carYear, carImg, deleteBtn)
     // APPEND TO THE DOM
     carOl.append(carLi)
 
     container.append(carOl)
+
+
+    likeBtn.addEventListener("click", (e) =>{
+        fetch(`http://localhost:3000/foods/${car.id}`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json',
+              },
+            body: JSON.stringify({
+                
+            })
+        })
+            .then(res => res.json())
+            .then((updatedFoodObj) => {
+    })
 
 
     deleteBtn.addEventListener("click", (evt) => {
