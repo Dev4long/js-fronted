@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script defer src="index.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
@@ -15,29 +15,30 @@
     <form action="" method="get" class="car-form">
         <div class="car-make">
           <label for="make">Enter car-make: </label>
-          <input type="text" name="make" id="name" required>
+          <input type="text" name="make" id="make" required>
         </div>
         <div class="car-image">
             <label for="image">Enter image URL: </label>
-            <input type="text" name="image" id="name" required>
+            <input type="text" name="image" id="image" required>
           </div>
           <div class="car-model">
             <label for="model">Enter car-model: </label>
-            <input type="text" name="model" id="name" required>
+            <input type="text" name="model" id="model" required>
           </div>
         <div class="car-hp">
           <label for="horse power">Enter car horse power: </label>
-          <input type="email" name="horse power" id="email" required>
+          <input type="number" name="horse-power" id="horse-power" required>
         </div>
         <div class="car-year">
             <label for="year">Enter year made: </label>
-            <input type="text" name="year" id="name" required>
+            <input type="number" name="year" id="year" required>
           </div>
     
           <p>Is your car a sports car?</p>
+          
           <div>
-            <input type="checkbox" id="scales" name="scales">
-            <label for="scales">Yes</label>
+            <input type="checkbox" id="sports" name="sports">
+            <label for="sports">Yes</label>
           </div>
         <div class="car-type">
           <input type="submit" value="Submit">
@@ -46,7 +47,7 @@
     </br>
         <div class="container">
           <label for="wishlist">Your Wishlist!</label>
-          
+          <button class="sports-filter" type="button">Toggle Sport cars:</button>
         </div>
       
 </body>

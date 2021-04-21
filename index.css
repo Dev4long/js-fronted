@@ -1,11 +1,39 @@
 form {
-  background-color: #8b1dac;
+  font-weight: bold;
   text-align: center;
+  color: rgb(151, 13, 13);
 }
 h1 {
-  color: rgb(0, 0, 0);
+  color: rgb(151, 13, 13);
   text-align: center;
 }
-p {
-  color: rgb(0, 0, 0);
+
+p, h3, h2, .container {
+  color: rgb(151, 13, 13);
 }
+
+.pic {
+  width: 300px;  
+height: auto;  
+}
+
+ol {
+  text-align: left;
+}
+
+li {
+  padding: 50px;
+  margin: 50px;
+}
+
+.container {
+  color: rgb(151, 13, 13);
+}
+
+body {
+  background-image: url("https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/Car-Headlights-LEDvsHIDvsxenon-1001x565p.jpg");
+  background-color: #cccccc;
+  background-attachment: fixed;
+ }
+
+/*      */
