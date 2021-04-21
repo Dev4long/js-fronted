@@ -43,11 +43,7 @@ function renderCar(car) {
 
     let deleteBtn = document.createElement("button")
     deleteBtn.innerHTML = "DELETE"
-    deleteBtn.classList.add("delete")
-
-    // let likeBtn = document.createElement("button")
-    // deleteBtn.innerText = "LIKE"
-    // deleteBtn.classList.add("like")
+    deleteBtn.className = "delete"
 
     // CONSTRUCT THE CARD
     carLi.append(carMake, carMod, carHp, carYear, carImg, deleteBtn)
@@ -58,11 +54,11 @@ function renderCar(car) {
 
 
     deleteBtn.addEventListener("click", (evt) => {
-        fetch(`http://localhost:3000/cars`, {
+        fetch(`http://localhost:3000/cars/${car.id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
-            .then((emptyObj) => {
+            .then((carObj) => {
                 carLi.remove()
             })
 
@@ -102,6 +98,7 @@ newCar.addEventListener('submit', (e) => {
             renderCar(newCar)
             newCar = car
         })
+        
 })
 
 
