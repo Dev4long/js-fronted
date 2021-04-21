@@ -41,20 +41,35 @@ function renderCar(car) {
     carYear.innerText = `Manufactured in ${car.year}`
     carYear.className = "year"
 
+    let deleteBtn = document.createElement("button")
+    deleteBtn.innerHTML = "DELETE"
+    deleteBtn.classList.add("delete")
 
+    
     // CONSTRUCT THE CARD
-    carLi.append(carMake, carMod, carHp, carYear, carImg)
+    carLi.append(carMake, carMod, carHp, carYear, carImg, deleteBtn)
     // APPEND TO THE DOM
     carOl.append(carLi)
 
     container.append(carOl)
 
+
+    deleteBtn.addEventListener("click", (evt) => {
+        fetch(`http://localhost:3000/cars`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then((emptyObj) => {
+                carLi.remove()
+            })
+
+    })
 }
 
 
 
 newCar.addEventListener('submit', (e) => {
-    efilter.preventDefault()
+    e.preventDefault()
 
     let carMake = document.querySelector("#make").value
     let carPic = document.querySelector("#image").value
@@ -72,20 +87,25 @@ newCar.addEventListener('submit', (e) => {
         "sport": sportCar
     }
 
-    fetch("http://localhost:3000/cars", {
+    fetch(`http://localhost:3000/cars`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(car)
-    })  
+    })
         .then((r) => r.json())
         .then((newCar) => {
             renderCar(newCar)
-            
+            newCar = car
         })
-        debugger;
+        
 })
+
+
+
+
+
 
 
 let typeFilter = document.querySelector(".sports-filter")
