@@ -1,9 +1,12 @@
 form {
   font-weight: bold;
   text-align: center;
+  font-size: 30px;
   color: rgb(151, 13, 13);
   border: 5px solid rgba(255, 255, 255, 0.514);
+  background: linear-gradient(black, rgb(224, 224, 224));
 }
+
 h1 {
   color: rgb(151, 13, 13);
   text-align: center;
@@ -11,6 +14,13 @@ h1 {
 
 p, h3, h2, .container {
   color: rgb(151, 13, 13);
+  font-weight: bold;
+  font-size: 25px;
+}
+
+span {
+  font-weight: bold;
+  padding-left: 20px;
 }
 
 .pic {
