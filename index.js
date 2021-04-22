@@ -48,9 +48,13 @@ function renderCar(car) {
     likeBtn.setAttribute('type', 'button');
     likeBtn.innerText = "❤️"
     likeBtn.className = "like-button"
+    
 
     let likes = document.createElement("span")
+    likes.innerText = 0;
     likes.innerText = car.likes
+    
+
 
     // CONSTRUCT THE CARD
     carLi.append(likeBtn, likes, carMake, carMod, carHp, carYear, carImg, deleteBtn)
@@ -61,6 +65,7 @@ function renderCar(car) {
 
 
     likeBtn.addEventListener("click", (e) => {
+        e.preventDefault()
         console.log('clicked');
         fetch(`http://localhost:3000/cars/${car.id}`, {
             method: "PATCH",
@@ -110,7 +115,8 @@ newCar.addEventListener('submit', (e) => {
         "model": carModel,
         "hp": carHp,
         "year": carYr,
-        "sport": sportCar
+        "sport": sportCar,
+        "likes": 0
     }
 
     fetch(`http://localhost:3000/cars`, {

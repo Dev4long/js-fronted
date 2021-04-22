@@ -2,6 +2,7 @@ form {
   font-weight: bold;
   text-align: center;
   color: rgb(151, 13, 13);
+  border: 5px solid rgba(255, 255, 255, 0.514);
 }
 h1 {
   color: rgb(151, 13, 13);
@@ -14,7 +15,7 @@ p, h3, h2, .container {
 
 .pic {
   width: 300px;  
-height: auto;  
+  height: auto;  
 }
 
 ol {
@@ -24,14 +25,17 @@ ol {
 li {
   padding: 50px;
   margin: 50px;
+  list-style-position:inside;
+  border: 5px solid rgb(255, 255, 255, 0.514);
 }
 
 .container {
   color: rgb(151, 13, 13);
+  font-weight: bold;
 }
 
 body {
-  background-image: url("https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/Car-Headlights-LEDvsHIDvsxenon-1001x565p.jpg");
+  background-image: url("https://media.architecturaldigest.com/photos/5ced629704c41e1a9b9a8bcf/master/pass/Bugatti-LVN-7%20%5BBugatti%5D.jpg");
   background-color: #cccccc;
   background-attachment: fixed;
   background-repeat: no-repeat;
