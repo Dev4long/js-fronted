@@ -4,12 +4,14 @@ form {
   font-size: 30px;
   color: rgb(151, 13, 13);
   border: 5px solid rgba(255, 255, 255, 0.514);
-  background: linear-gradient(black, rgb(224, 224, 224));
+  background: linear-gradient(rgb(255, 255, 255), rgba(173, 3, 3, 0.349));
 }
 
 h1 {
   color: rgb(151, 13, 13);
   text-align: center;
+  font-weight: bold;
+  font-size: 50px;
 }
 
 p, h3, h2, .container {
@@ -25,23 +27,33 @@ span {
 
 .pic {
   width: 300px;  
-  height: auto;  
+  height: 300px;
+  border: 5px solid rgb(255, 255, 255);
+  margin: auto;
+  
 }
 
-ol {
-  text-align: left;
-}
+
+
+
 
 li {
+  text-align: center;
   padding: 50px;
   margin: 50px;
   list-style-position:inside;
   border: 5px solid rgb(255, 255, 255, 0.514);
+  display:inline-block;
+  background: linear-gradient(rgb(255, 255, 255), rgba(173, 3, 3, 0.349));
+  vertical-align: middle;
+  align-content: center;
+  flex-wrap: wrap; 
 }
 
 .container {
   color: rgb(151, 13, 13);
   font-weight: bold;
+  text-align: center;
 }
 
 body {

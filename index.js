@@ -41,8 +41,13 @@ function renderCar(car) {
     carYear.innerText = `Manufactured in ${car.year}`
     carYear.className = "year"
 
+    let div = document.createElement("div")
+
     let deleteBtn = document.createElement("button")
     deleteBtn.innerText = "DELETE"
+    deleteBtn.className = "delete-btn"
+    
+    let br = document.createElement("br")
 
     let likeBtn = document.createElement("button")
     likeBtn.setAttribute('type', 'button');
@@ -54,10 +59,10 @@ function renderCar(car) {
     likes.innerText = 0;
     likes.innerText = car.likes
     
-
+    div.append(deleteBtn)
 
     // CONSTRUCT THE CARD
-    carLi.append(likeBtn, likes, carMake, carMod, carHp, carYear, carImg, deleteBtn)
+    carLi.append(likeBtn, likes, carMake, carMod, carHp, carYear, carImg, br, deleteBtn,)
     // APPEND TO THE DOM
     carOl.append(carLi)
 
